@@ -1,6 +1,6 @@
 import styles from "@/app/ui/carousel.module.css"
 
-export default function slide(props) {
+export default function slide(props: { slideCount: number }) {
 	const slideNumber = props.slideCount
 	return (
 		<div className={styles.slide}>
