@@ -1,0 +1,18 @@
+.productListing {
+	display: grid;
+	/*grid-area: ;*/
+	grid-template-areas: 'images information';
+	gap: 2rem;
+}
+
+.productImages {
+	grid-area: "images";
+}
+
+.title {}
+
+.price {}
+
+.description {
+	color: blue;
+}
