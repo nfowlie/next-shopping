@@ -44,9 +44,6 @@ main {
 	grid-area: "main";
 	background-color: var(--light-2);
 	width: clamp(95vw, 85vw, 900px);
-	display: flex;
-	justify-content: center;
-	/*height: calc(var(--top-bar-height) - 100vh);*/
 }
 
 footer {

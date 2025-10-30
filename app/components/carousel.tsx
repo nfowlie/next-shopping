@@ -2,6 +2,8 @@ import styles from "@/app/ui/carousel.module.css"
 import Slide from "./slide"
 
 export default function Carousel(props: { title: string; slideCount: number }) {
+
+
 	const title = props.title
 	const slides = []
 	for (let i = 1; i <= props.slideCount; i++) {

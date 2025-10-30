@@ -3,6 +3,7 @@
 	--slide-gap: 50px;
 	display: grid;
 	gap: 1rem;
+	grid-template-rows: auto 1fr;
 }
 
 @media screen {

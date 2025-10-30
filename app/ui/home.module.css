@@ -1,6 +1,8 @@
 .main {
 	background-color: var(--light-2);
 	width: clamp(95vw, 85vw, 900px);
-	display: flex;
+	display: grid;
 	justify-content: center;
+	row-gap: 2rem;
+	margin-block-end: 2rem;
 }

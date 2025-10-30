@@ -1,5 +1,6 @@
 import styles from "@/app/ui/product.module.css"
 
+
 export const runtime = 'edge'
 
 export default async function Product({ params, }: { params: Promise<{ slug: string }> }) {
