@@ -6,25 +6,25 @@ import LoadingCarousel from "@/app/loading/loadingCarousel";
 
 import { lazy } from "react";
 
-const NeverResolve = lazy(() => new Promise(() => { }))
+// const NeverResolve = lazy(() => new Promise(() => { }))
 
 export default function Home() {
 	return (
 		<main className={styles.main}>
 			<Suspense fallback={<LoadingCarousel title="Recommended" />}>
-				<NeverResolve />
+				{/*<NeverResolve />*/}
 				<Carousel title="Recommended" slideCount={10} />
 			</Suspense>
 			<Suspense fallback={<LoadingCarousel title="New" />}>
-				<NeverResolve />
+				{/*<NeverResolve />*/}
 				<Carousel title="New" slideCount={10} />
 			</Suspense>
 			<Suspense fallback={<LoadingCarousel title="Upcoming" />}>
-				<NeverResolve />
+				{/*<NeverResolve />*/}
 				<Carousel title="Upcoming" slideCount={10} />
 			</Suspense>
 			<Suspense fallback={<LoadingCarousel title="Staff Picks" />}>
-				<NeverResolve />
+				{/*<NeverResolve />*/}
 				<Carousel title="Staff Picks" slideCount={10} />
 			</Suspense>
 		</main >
