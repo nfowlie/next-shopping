@@ -1,2 +1,2 @@
-# Next Shopping
-## A shopping site written in next with App Router
+# Next Music
+## An Audio DB enabled website written in NextJS with App Router

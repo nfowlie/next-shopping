@@ -58,11 +58,12 @@
 	transition: transform 0.5s;
 	position: relative;
 
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 100px;
+	display: grid;
+	/*justify-content: center;*/
+	/*align-items: center;*/
+	text-align: center;
 	counter-increment: slide;
+	cursor: pointer;
 }
 
 .slide:hover {

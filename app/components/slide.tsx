@@ -1,10 +1,14 @@
 import styles from "@/app/ui/carousel.module.css"
+import { iSlide, iAlbum } from "@/app/types/slide"
 
-export default function slide(props: { slideCount: number }) {
-	const slideNumber = props.slideCount
+export default function slide(props: { slideCount: number, slideData: iSlide }) {
+	const slideData = props.slideData
 	return (
 		<div className={styles.slide}>
-			{slideNumber}
+			<img src={slideData.album[0].strAlbumThumb} />
+			<div>
+				{slideData?.album[0].strAlbum}
+			</div>
 		</div>
 	)
 }

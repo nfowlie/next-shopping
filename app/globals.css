@@ -8,6 +8,7 @@
 	--light-3: #d0d0d0;
 	--dark-1: #000000;
 	--top-bar-height: 5rem;
+	--brand-color: #5F9EA0;
 }
 
 @theme inline {
@@ -27,7 +28,7 @@
 body {
 	background: var(--background);
 	color: var(--foreground);
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Data Transfer', 'Circular Abstracts', 'Smooth Circulars', Arial, Helvetica, sans-serif;
 	display: grid;
 	min-height: 100vh;
 	grid-template-areas: "nav"
@@ -52,4 +53,20 @@ footer {
 
 h2 {
 	font-size: 2rem;
+}
+
+
+@font-face {
+	font-family: 'Smooth Circulars';
+	src: local("Smooth Circulars") url("fonts/Smooth Circulars.otf") format("opentype");
+}
+
+@font-face {
+	font-family: 'Circular Abstracts';
+	src: local("Circular Abstracts"), url("fonts/Circular Abstracts.ttf") format("opentype");
+}
+
+@font-face {
+	font-family: "Data Transfer";
+	src: local("Data Transfer"), url("fonts/Data Transfer.otf") format("opentype");
 }

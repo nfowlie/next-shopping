@@ -1,31 +1,39 @@
-import styles from "@/app/ui/home.module.css"
+// 'use client'
+
 import Carousel from "./components/carousel";
 import { Suspense } from 'react'
+import styles from "@/app/ui/home.module.css"
 
 import LoadingCarousel from "@/app/loading/loadingCarousel";
 
-import { lazy } from "react";
+export default async function Home() {
 
-// const NeverResolve = lazy(() => new Promise(() => { }))
+	const getData = async () => {
+		const res = await fetch('http://localhost:3000/api', {
+			next: { revalidate: 10 }
+		})
+		return res.json()
+	}
 
-export default function Home() {
+	const data = await getData()
+	const recommended = data.data,
+		staffPicks = data.data,
+		newReleases = data.data,
+		upcomingReleases = data.data
+
 	return (
 		<main className={styles.main}>
 			<Suspense fallback={<LoadingCarousel title="Recommended" />}>
-				{/*<NeverResolve />*/}
-				<Carousel title="Recommended" slideCount={10} />
+				<Carousel title="Recommended" slideCount={10} slideData={recommended} />
 			</Suspense>
 			<Suspense fallback={<LoadingCarousel title="New" />}>
-				{/*<NeverResolve />*/}
-				<Carousel title="New" slideCount={10} />
+				<Carousel title="New" slideCount={10} slideData={newReleases} />
 			</Suspense>
 			<Suspense fallback={<LoadingCarousel title="Upcoming" />}>
-				{/*<NeverResolve />*/}
-				<Carousel title="Upcoming" slideCount={10} />
+				<Carousel title="Upcoming" slideCount={10} slideData={upcomingReleases} />
 			</Suspense>
 			<Suspense fallback={<LoadingCarousel title="Staff Picks" />}>
-				{/*<NeverResolve />*/}
-				<Carousel title="Staff Picks" slideCount={10} />
+				<Carousel title="Staff Picks" slideCount={10} slideData={staffPicks} />
 			</Suspense>
 		</main >
 	);

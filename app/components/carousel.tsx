@@ -1,17 +1,24 @@
 import styles from "@/app/ui/carousel.module.css"
 import Slide from "./slide"
 
-export default function Carousel(props: { title: string; slideCount: number }) {
+interface iSlide {
+	album: iAlbum[]
+}
 
+interface iAlbum {
+	idAlbum: number,
+	strAlbumThumb: string,
+	strAlbum: string
+}
+
+export default function Carousel(props: { title: string; slideCount: number, slideData: iSlide[] }) {
+
+	const slideData = props.slideData
 
 	const title = props.title
-	const slides = []
-	for (let i = 1; i <= props.slideCount; i++) {
-		slides[i] = i
-	}
 
-	const slideItems = slides.map((slide) => {
-		return <Slide key={slide} slideCount={slide}></Slide>
+	const slideItems = slideData?.map((slide) => {
+		return <Slide key={slide.album[0].idAlbum} slideCount={slideData.length} slideData={slide}></Slide>
 	})
 
 	return (
