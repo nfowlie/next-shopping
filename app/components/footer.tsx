@@ -6,7 +6,7 @@ export default function Footer(props: { id: string }) {
 	return (
 		<footer id={styles[footer]}>
 			<div className={styles.footerCategory}>
-				<h3 className={styles.categoryTitle}>Next Music</h3>
+				<h3 className={styles.categoryTitle}>Next Audio</h3>
 				<Link href="/about">About</Link>
 				<Link href="/contact">Contact</Link>
 			</div>

@@ -9,7 +9,7 @@ import LoadingCarousel from "@/app/loading/loadingCarousel";
 export default async function Home() {
 
 	const getData = async () => {
-		const res = await fetch('http://localhost:3000/api', {
+		const res = await fetch(`${process.env.SERVER_BASE_URI}/api`, {
 			next: { revalidate: 10 }
 		})
 		return res.json()
