@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server"
+import { NextResponse } from "next/server"
 import staffPicks from "@/app/data/staffPicks.json"
 
 export async function GET() {
@@ -6,16 +6,19 @@ export async function GET() {
 		audioDBAuth = process.env.AUDIO_DB_KEY
 
 	try {
-		const data = await Promise.all(staffPicks.map(async (sp) => {
+		const allPicks = await Promise.all(staffPicks.map(async (sp) => {
 			return await fetch(`${audioDBURI}/${audioDBAuth}/searchalbum.php?s=${sp.artist}&a=${sp.album}`)
 				.then(res => res.json())
 				.then(data => data)
 		}))
 
 		return NextResponse.json({
-			data
+			allPicks
 		})
 	} catch (err) {
-		console.log(err)
+		console.error(err)
+		return NextResponse.json({
+			err
+		})
 	}
 }

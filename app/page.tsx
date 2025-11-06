@@ -1,25 +1,17 @@
-// 'use client'
-
-import Carousel from "./components/carousel";
 import { Suspense } from 'react'
 import styles from "@/app/ui/home.module.css"
+import Carousel from "./components/carousel";
 
 import LoadingCarousel from "@/app/loading/loadingCarousel";
+import { getAllPicks } from "./lib/utils";
 
 export default async function Home() {
+	const data = await getAllPicks()
 
-	const getData = async () => {
-		const res = await fetch(`${process.env.SERVER_BASE_URI}/api`, {
-			next: { revalidate: 10 }
-		})
-		return res.json()
-	}
-
-	const data = await getData()
-	const recommended = data.data,
-		staffPicks = data.data,
-		newReleases = data.data,
-		upcomingReleases = data.data
+	const recommended = data.allPicks,
+		staffPicks = data.allPicks,
+		newReleases = data.allPicks,
+		upcomingReleases = data.allPicks
 
 	return (
 		<main className={styles.main}>

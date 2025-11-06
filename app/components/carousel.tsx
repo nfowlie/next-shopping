@@ -1,15 +1,6 @@
 import styles from "@/app/ui/carousel.module.css"
 import Slide from "./slide"
-
-interface iSlide {
-	album: iAlbum[]
-}
-
-interface iAlbum {
-	idAlbum: number,
-	strAlbumThumb: string,
-	strAlbum: string
-}
+import { iSlide } from "@/app/types/slide"
 
 export default function Carousel(props: { title: string; slideCount: number, slideData: iSlide[] }) {
 

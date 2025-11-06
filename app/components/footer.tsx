@@ -1,5 +1,5 @@
-import styles from '@/app/ui/footer.module.css'
 import Link from 'next/link'
+import styles from '@/app/ui/footer.module.css'
 
 export default function Footer(props: { id: string }) {
 	const footer = props.id
